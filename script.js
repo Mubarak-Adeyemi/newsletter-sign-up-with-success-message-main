@@ -7,7 +7,8 @@ const errorMessage = document.getElementById("error-message");
 const dismissButton = document.getElementById("dismiss-button");
 
 // Email Validation Regex
-const emailPattern = /^[^s@]+@[^\s@]+\.[^\s@]+$/;
+const emailPattern =
+  /^(?:[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:\\[\x01-\x09\x0b\x0c\x0e-\x7f]|\\[\x01-\x7f])*")@(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}|(?:\[(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\]))$/;
 
 // Function to validate email
 const validateEmail = (email) => emailPattern.test(email);
