@@ -89,6 +89,12 @@ const handleEmailInput = () => {
 The handleEmailInput function checks the email format as the user types and
 dynamically updates the error message visibility and input field style.
 
+In addition to form validation and real-time feedback, I also learned how to implement advanced email validation that adheres to RFC 5322 standards, allowing for more complex email address formats. This ensures that even unusual but valid email formats are accepted, providing more robust validation.
+
+```js
+const emailPattern = /^(?:[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:\\[\x01-\x09\x0b\x0c\x0e-\x7f]|\\[\x01-\x7f])*")@(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}|(?:\[(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\]))$/;
+```
+
 #### Toggle class utility function:
 
 I learned how to streamline the manipulation of CSS classes with a simple
