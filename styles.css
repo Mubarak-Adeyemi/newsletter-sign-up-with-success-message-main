@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --Tomato: hsl(4, 100%, 67%);
+  --Dark-Slate-Grey: hsl(234, 29%, 20%);
+  --Charcoal-Grey: hsl(235, 18%, 26%);
+  --Grey: hsl(231, 7%, 60%);
+  --White: hsl(0, 0%, 100%);
+  --valid: hsl(119, 93%, 34%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--Dark-Slate-Grey);
+  color: var(--White);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  position: relative;
+  background-color: var(--White);
+  color: var(--Dark-Slate-Grey);
+  max-width: 478px;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+}
+
+.header-img {
+  height: 200px;
+  width: 100%;
+  background: url(./assets/images/illustration-sign-up-mobile.svg) center /
+    cover;
+}
+
+.text-content,
+form {
+  padding: 1rem 2rem;
+}
+
+.subscription-form .text-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subscription-form p {
+  margin-bottom: 1.5rem;
+}
+
+.subscription-form ul {
+  list-style: none;
+}
+
+.subscription-form ul li {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subscription-form ul li::before {
+  content: url(./assets/images/icon-list.svg);
+  color: var(--Tomato);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+form label {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+form input {
+  padding: 0.75rem;
+  border: 2px solid var(--Grey);
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+.invalid {
+  border: 2px solid var(--Tomato);
+}
+.valid {
+  border: 2px solid var(--valid);
+}
+
+form button {
+  padding: 0.75rem;
+  background-color: var(--Charcoal-Grey);
+  border: none;
+  color: var(--White);
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+form button:hover,
+#dismiss-button:hover {
+  background-color: var(--Tomato);
+}
+
+/* Success Message Styling */
+#success-message {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--White);
+  color: var(--Charcoal-Grey);
+  padding: 5rem 2rem 2rem;
+  flex-direction: column;
+}
+#success-message p,
+#success-message h1,
+#success-message img {
+  margin-bottom: 1.5rem;
+  align-self: start;
+}
+
+#success-message p {
+  flex: 1;
+}
+
+#email-output {
+  font-weight: 700;
+}
+#error-message {
+  position: absolute;
+  right: 2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--Tomato);
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#dismiss-button {
+  background-color: var(--Dark-Slate-Grey);
+  color: var(--White);
+  border: none;
+  padding: 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  bottom: 1rem;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  main {
+    padding: 1rem;
+    max-width: 80%;
+    height: auto;
+    border-radius: 1rem;
+  }
+
+  .subscription-form {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "text-content text-content text-content header-img header-img"
+      "form form form header-img header-img";
+  }
+  .header-img {
+    background: url(./assets/images/illustration-sign-up-desktop.svg) top right /
+      cover;
+    grid-area: header-img;
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+  }
+  .text-content {
+    grid-area: text-content;
+  }
+
+  .subscription-form .text-content h1 {
+    font-size: 2.5rem;
+  }
+
+  form {
+    grid-area: form;
+    padding-bottom: 2rem;
+    padding-top: 0;
+  }
+
+  #success-message {
+    width: 350px;
+    height: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -225px 0 0 -175px;
+    border-radius: 1rem;
+    padding: 2rem;
+    /* display: block; */
+  }
+}
+
+@media (min-width: 900px) {
+  main {
+    max-width: 60%;
+  }
+}
